@@ -14,13 +14,25 @@ IsAlive не попадает, так как это поле, решить пр�
 
 ## Второе задание 
 ### а)
-`public class Game
-{
-    public string Title { get; set; }
-    public int Year { get; set; }
-    public double Rating { get; set; }
-    public string[] Genres { get; set; }
-    public bool IsMultiplayer { get; set; }
-}`
+`public class Game`
+`{`
+    `public string Title { get; set; }`
+    `public int Year { get; set; }`
+    `public double Rating { get; set; }`
+    `public string[] Genres { get; set; }`
+    `public bool IsMultiplayer { get; set; }`
+`}`
 
 ### б)
+Так получилось, потому что сериалайзер учитывает регистр в сопоставлении ключа в json свойству в классе.
+Чтобы решить проблему, нужно задать в настройках сериализации параметр PropertyNameCaseInsensitive = true
+
+### в)
+Да, строка валидна, это массив, состоящий из разных объектов, поэтому можно использовать массив object[] для десериализации.
+
+## Третье задание
+1) File, так как читаем небольшой файл (File.ReadAllText()), от нас больше ничего не требуется
+2) File, пишем File.WriteAllText() и готово
+3) FileStream, чтобы не открывать огромный файл постоянно, проще держать его открытым всегда и дописывать.
+4) File, используем File.Exists и File.ReadAllText
+5) FileStream, чтобы не переписывать файл целиком, а только поменять биты в середине
