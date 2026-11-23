@@ -30,9 +30,9 @@ IInteractable
 IHealable
 
 Character : IDamageable
-|
-|- Player : Character, IHealable, IInteractable
-|
-|- Enemy : Character
-|
-|- NPC : Character, IInteractable
+
+- Player : Character, IHealable, IInteractable
+
+- Enemy : Character
+
+- NPC : Character, IInteractable
